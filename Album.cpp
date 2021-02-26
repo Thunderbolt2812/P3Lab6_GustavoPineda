@@ -42,3 +42,23 @@ vector<Cancion*> Album::getCanciones(){
 void Album::agregarCancion(Cancion* cancion){
     canciones.push_back(cancion);
 }
+Album Album::operator*(int a){
+	Album res;
+	for(int i = 0;i<a;i++){
+		for(int j = 0;j<res.getCanciones().size();j++){
+			res.getCanciones().push_back(res.getCanciones().at(j));
+		}
+	}
+	return res;
+}
+Album Album::operator+(Cancion c){
+	Album res;
+    vector<Cancion*> aux;
+    aux = this->getCanciones();
+    aux.push_back(&c);
+    for(int i = 0;i<aux.size();i++){
+    	Cancion* aux2 = aux.at(i);
+    	res.agregarCancion(aux2);
+	}
+	return res;
+}

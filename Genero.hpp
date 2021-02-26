@@ -6,16 +6,13 @@
 using namespace std;
 class Genero {
 private:
-	string genero;
+	string nombre;
 public:
 	Genero();
 	Genero(string);
 	~Genero();
-	string getGenero();
-	void setGenero(string);
-public:
-    string getNombre();
-    void setNombre(string);
+	string getNombre();
+	void setNombre(string);
 
 };
 #endif

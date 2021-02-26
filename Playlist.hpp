@@ -3,8 +3,9 @@
 #define PLAYLIST_HPP
 #include<iostream>
 #include<vector>
-#include"Genero.hpp"
 #include"Cancion.hpp"
+#include "Album.hpp"
+#include "Genero.hpp"
 using namespace std;
 class Playlist {
 private:
@@ -18,5 +19,9 @@ public:
 	vector<Cancion*> getCanciones();
 	void agregarCancion(Cancion*);
 	void setNombre(string);
+	Playlist operator+(Cancion);
+	Playlist operator+(Playlist);
+	Playlist operator-(Cancion);
+	Playlist operator-(Genero);
 };
 #endif

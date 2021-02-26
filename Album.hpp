@@ -5,6 +5,7 @@
 #include<vector>
 #include<iostream>
 #include"Cancion.hpp"
+#include"Playlist.hpp"
 using namespace std;
 class Album {
 private:
@@ -21,5 +22,7 @@ public:
 	void setNombre(string);
 	void setArtistaA(int,string);
 	void agregarCancion(Cancion*);
+	Album operator*(int);
+	Album operator+(Cancion);
 };
 #endif

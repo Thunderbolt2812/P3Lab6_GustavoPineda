@@ -2,16 +2,16 @@
 
 Genero::Genero(){
 }
-Genero::Genero(string genero) {
-    this->genero = genero;
+Genero::Genero(string nombre) {
+    this->nombre = nombre;
 }
 Genero::~Genero() {
 
 }
-string Genero::getGenero(){
-    return genero;
+string Genero::getNombre(){
+    return nombre;
 }
 
-void Genero::setNombre(string genero){
-    this->genero = genero;
+void Genero::setNombre(string nombre){
+    this->nombre = nombre;
 }
