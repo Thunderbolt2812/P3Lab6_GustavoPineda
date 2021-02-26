@@ -19,13 +19,8 @@ string Album::getArtistaA(){
     return artistaA;
 }
 
-void Album::setArtistaA(int numA,string artista){
-    if (numA!=0) {
-        artistaA = "Varios Artistas";
-    }
-    else {
-        artistaA = artista;
-    }
+void Album::setArtistaA(string artista){
+    this->artistaA = artistaA;
 }
 
 Album::~Album() {

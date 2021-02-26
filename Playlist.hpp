@@ -21,6 +21,7 @@ public:
 	void setNombre(string);
 	Playlist operator+(Cancion);
 	Playlist operator+(Playlist);
+	Playlist operator+(Album);
 	Playlist operator-(Cancion);
 	Playlist operator-(Genero);
 };

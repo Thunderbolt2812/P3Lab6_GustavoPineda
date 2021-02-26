@@ -1,11 +1,9 @@
-#pragma once
 #ifndef ALBUM_HPP
 #define ALBUM_HPP
 #include<string>
 #include<vector>
 #include<iostream>
 #include"Cancion.hpp"
-#include"Playlist.hpp"
 using namespace std;
 class Album {
 private:
@@ -20,7 +18,7 @@ public:
 	string getArtistaA();
 	vector<Cancion*> getCanciones();
 	void setNombre(string);
-	void setArtistaA(int,string);
+	void setArtistaA(string);
 	void agregarCancion(Cancion*);
 	Album operator*(int);
 	Album operator+(Cancion);

@@ -36,20 +36,20 @@ Playlist Playlist::operator+(Cancion c){
 	}
 	return res;
 }
-//Playlist Playlist::operator+(Album a){
-//	Playlist res;
-//    vector<Cancion*> aux;
-//    aux = this->getCanciones();
-//    for(int i = 0;i<a.getCanciones().size();i++){
-//    	Cancion* aux2 = a.getCanciones().at(i);
-//    	aux.push_back(aux2);
-//	}
-//    for(int i = 0;i<aux.size();i++){
-//    	Cancion* aux3 = aux.at(i);
-//    	res.agregarCancion(aux3);
-//	}
-//	return res;
-//}
+Playlist Playlist::operator+(Album a){
+	Playlist res;
+    vector<Cancion*> aux;
+    aux = this->getCanciones();
+    for(int i = 0;i<a.getCanciones().size();i++){
+    	Cancion* aux2 = a.getCanciones().at(i);
+    	aux.push_back(aux2);
+	}
+    for(int i = 0;i<aux.size();i++){
+    	Cancion* aux3 = aux.at(i);
+    	res.agregarCancion(aux3);
+	}
+	return res;
+}
 Playlist Playlist::operator+(Playlist p){
 	Playlist res;
     vector<Cancion*> aux;
@@ -72,11 +72,20 @@ Playlist Playlist::operator-(Cancion c){
     for(int i = 0;i<aux.size();i++){
     	Cancion* aux2 = aux.at(i);
     	string nom2 = aux2->getNombre();
-    	if(nom!=nom2){
-    		res.agregarCancion(aux2);
+    	if(nom==nom2){
+    		aux.erase(aux.begin()+i);
 		}
 	}
-	return res;
+	if(!aux.empty()){
+		for(int i = 0;i<aux.size();i++){
+			Cancion* aux3 = aux.at(i);
+	    	res.agregarCancion(aux3);
+    	}
+    	return res;
+	}else{
+		cout<<"La playlist se vacio"<<endl;
+		return res;
+	}
 }
 Playlist Playlist::operator-(Genero g){
 	Playlist res;

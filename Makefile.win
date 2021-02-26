@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o Cancion.o Album.o Genero.o Playlist.o
-LINKOBJ  = main.o Cancion.o Album.o Genero.o Playlist.o
+OBJ      = main.o Cancion.o Genero.o Playlist.o Album.o
+LINKOBJ  = main.o Cancion.o Genero.o Playlist.o Album.o
 LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
 CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
@@ -30,11 +30,11 @@ main.o: main.cpp
 Cancion.o: Cancion.cpp
 	$(CPP) -c Cancion.cpp -o Cancion.o $(CXXFLAGS)
 
-Album.o: Album.cpp
-	$(CPP) -c Album.cpp -o Album.o $(CXXFLAGS)
-
 Genero.o: Genero.cpp
 	$(CPP) -c Genero.cpp -o Genero.o $(CXXFLAGS)
 
 Playlist.o: Playlist.cpp
 	$(CPP) -c Playlist.cpp -o Playlist.o $(CXXFLAGS)
+
+Album.o: Album.cpp
+	$(CPP) -c Album.cpp -o Album.o $(CXXFLAGS)
